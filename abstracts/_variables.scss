@@ -1,0 +1,91 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+$media-breakpoints: (
+	'': 0,
+	'xs': 480px,
+	'sm': 576px,
+	'md': 768px,
+	'lg': 992px,
+	'xl': 1200px
+) !default;
+
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)'
+) !default;
+
+
+$display-types: (
+	none,
+	inline,
+	inline-block,
+	block,
+	table,
+	table-cell,
+	table-row,
+	flex,
+	inline-flex,
+) !default;
+
+$unit-intervals: (
+	'px': 1,
+	'em': 0.01,
+	'rem': 0.1,
+	'': 0
+) !default;
+
+$im-media-support: true !default;
+$im-no-media-breakpoint: 'desktop' !default;
+$im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
+// Configuration and helpers for include-media.scss end-->
+
+$_space-amounts: (0, 1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100); // Adjust this to include the pixel amounts you need.
+$_sides: (top, bottom, left, right); // Leave this variable alone
+// Configuration and helpers for spacing-helpers end-->
+
+$_grid-layout-sizes: (
+	1: 8.33%,
+	2: 16.666%,
+	3: 25%,
+	4: 33.333%,
+	5: 41.667%,
+	6: 50%,
+	7: 58.333%,
+	8: 66.667%,
+	9: 75%,
+	10: 83.333%,
+	11: 91.667%,
+	12: 100%,
+);
+// Configuration and helpers for grid.scss end-->
+
+
+// -----------------------------------------------------------------------------
+// Custom variables go below
+// -----------------------------------------------------------------------------
+
+// Fonts
+$font-stack: 'Open Sans', sans-serif;
+$font-min-size: 13px;
+$font-max-size: 23px;
+$font-mod-phone: 1.05; // mobile
+$font-mod-desktop: 1.25; // desktop
+$font-min-width: map-get($media-breakpoints, "xs");
+$font-max-width: map-get($media-breakpoints, "xl");
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-weight-black: 800;
+
+// Colours
+$colour-black: #000;
+$colour-white: #fff;

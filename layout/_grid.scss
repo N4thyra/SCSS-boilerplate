@@ -1,0 +1,116 @@
+.row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &--inline {
+    display: inline-flex;
+  }
+}
+
+.col {
+  flex-direction: column;
+
+  &--reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+.align-self {
+  &--start {
+    align-self: flex-start !important;
+  }
+
+  &--end {
+    align-self: flex-end !important;
+  }
+}
+
+.start {
+  justify-content: flex-start !important;
+}
+
+.center {
+  justify-content: center !important;
+}
+
+.end {
+  justify-content: flex-end !important;
+}
+
+.top {
+  align-items: flex-start !important;
+}
+
+.middle {
+  align-items: center !important;
+
+  &--content {
+    align-content: center !important;
+  }
+}
+
+.bottom {
+  align-items: flex-end !important;
+}
+
+.around {
+  justify-content: space-around !important;
+}
+
+.between {
+  justify-content: space-between !important;
+}
+
+.first {
+  order: -1;
+}
+
+.last {
+  order: 1;
+}
+
+.spacer {
+  flex-grow: 1 !important;
+}
+
+@each $media-breakpoint-key, $media-breakpoint-value in $media-breakpoints {
+  $operator: '>=';
+  $col-name: 'col-';
+
+  @if $media-breakpoint-key == '' {
+    $col-name: 'col';
+  }
+
+  @include media('#{$operator}#{$media-breakpoint-key}') {
+    .#{$col-name}#{$media-breakpoint-key} {
+      flex: 1 1 0;
+      max-width: 100%;
+    }
+
+    .#{$col-name}#{$media-breakpoint-key}--bare {
+      flex: 0 0 auto;
+    }
+
+    @each $key, $value in $_grid-layout-sizes {
+      .#{$col-name}#{$media-breakpoint-key}-#{$key} {
+        flex: 0 0 #{$value};
+        max-width: #{$value};
+      }
+
+      @if $key < 12 {
+        .#{$col-name}#{$media-breakpoint-key}-offset-#{$key} {
+          margin-left: #{$value};
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+// -----------------------------------------------------------------------------
+// This file contains all typography-related rules
+// -----------------------------------------------------------------------------
+body {
+	font-family: $font-stack;
+	color: $colour-black;
+	font-weight: $font-weight-regular;
+}
+
+h1, h2, h3, h4, h5, h6, p,
+.h1, .h2, .h3, .h4, .h5, .h6, .p {
+	margin: 0;
+	&:not(:last-child) {
+		margin: 0 0 0.75rem;
+	}
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	color: $colour-black;
+	font-weight: $font-weight-bold;
+	line-height: 1.3;
+}
+
+h1,
+.h1 {
+	//font-size: 3rem;
+	$multiplier: 1.65;
+	@include fluid-type($font-min-width, $font-max-width, ($multiplier*$font-mod-phone)*$font-min-size, ($multiplier*$font-mod-desktop) *$font-min-size);
+}
+
+h2,
+.h2 {
+	//font-size: 2.2rem;
+	$multiplier: 1.45;
+	@include fluid-type($font-min-width, $font-max-width, ($multiplier*$font-mod-phone)*$font-min-size, ($multiplier*$font-mod-desktop) *$font-min-size);
+}
+
+h3,
+.h3 {
+	$multiplier: 1.35;
+	@include fluid-type($font-min-width, $font-max-width, ($multiplier*$font-mod-phone)*$font-min-size, ($multiplier*$font-mod-desktop) *$font-min-size);
+}
+
+h4,
+.h4 {
+	$multiplier: 1.25;
+	@include fluid-type($font-min-width, $font-max-width, ($multiplier*$font-mod-phone)*$font-min-size, ($multiplier*$font-mod-desktop) *$font-min-size);
+}
+
+h5,
+.h5 {
+	$multiplier: 1.15;
+	@include fluid-type($font-min-width, $font-max-width, ($multiplier*$font-mod-phone)*$font-min-size, ($multiplier*$font-mod-desktop) *$font-min-size);
+}
+
+h6,
+.h6 {
+	$multiplier: 1.05;
+	@include fluid-type($font-min-width, $font-max-width, ($multiplier*$font-mod-phone)*$font-min-size, ($multiplier*$font-mod-desktop) *$font-min-size);
+}
+
+p,
+.p,
+li,
+select,
+input {
+	$multiplier: 0.9;
+	@include fluid-type($font-min-width, $font-max-width, ($multiplier*$font-mod-phone)*$font-min-size, ($multiplier*$font-mod-desktop) *$font-min-size);
+	line-height: 1.5;
+}
+
+a,
+.a {
+	font-size: inherit;
+	color: $colour-black;
+	text-decoration: none;
+
+	&:visited {
+	}
+	
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.whitespace {
+	&-nowrap {
+		white-space: nowrap;
+	}
+}
+
+.text {
+	&-colour {
+		&--white {
+			color: $colour-white;
+		}
+	}
+	&-transform {
+		&--uppercase {
+			text-transform: uppercase !important;
+		}
+	}
+
+	&-align {
+		&--left {
+			text-align: left !important;
+		}
+		&--center {
+			text-align: center !important;
+		}
+		&--right {
+			text-align: right !important;
+		}
+	}
+}
+

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+// Base imports
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&subset=latin-ext');
+
+// 1. Configuration and helpers
+@import 'abstracts/variables';
+@import 'abstracts/libraries/include-media';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// 2. Vendor
+// @import 'vendors/fancybox';
+
+// 3. Vendor-extension
+//@import 'vendors-extensions/swiper-bundle';
+
+// 4. Base stuff
+@import 'base/normalize';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/helpers';
+@import 'base/svg';
+
+// 5. Layout-related section
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/slider';
+
+// 6. Components
+@import 'components/buttons';
+@import 'components/lists';
+@import 'components/picture';
+@import 'components/burger';
+@import 'components/breadcrumb';
+@import 'components/gallery';
+@import 'components/cms';
+@import 'components/youtube';
+@import 'components/accordion';
+@import 'components/inputs';
+@import 'components/transitions';
+@import 'components/pagination';
+@import 'components/loading';
+@import 'components/lazy';
+@import 'components/form';
+
+// 7. Page-specific styles
+@import 'pages/404';
+@import 'pages/page';
+
+// 8. Themes
+@import 'themes/default';
